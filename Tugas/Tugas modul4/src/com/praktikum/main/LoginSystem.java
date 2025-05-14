@@ -19,7 +19,7 @@ public class LoginSystem {
             scan.nextLine();
 
             if (pil == 1) {
-                User admin = new Admin();
+                User user = new Admin();
                 System.out.println();
                 System.out.print("Masukkan Username: ");
                 String usn = scan.nextLine();
@@ -28,8 +28,7 @@ public class LoginSystem {
 
 
 
-                if (admin.login(usn, pass)) {
-                    Admin user = (Admin) admin;
+                if (user.login(usn, pass)) {
                     user.displayInfo();
                     user.displayAppMenu();
                 } else {
@@ -37,15 +36,14 @@ public class LoginSystem {
                     System.out.println();
                 }
             } else if (pil == 2) {
-                User mahasiswa = new Mahasiswa();
+                User user = new Mahasiswa();
                 System.out.println();
                 System.out.print("Masukkan Nama: ");
                 String nama = scan.nextLine();
                 System.out.print("Masukkan NIM: ");
                 String nim = scan.nextLine();
 
-                if (mahasiswa.login(nama, nim)) {
-                    Mahasiswa user = (Mahasiswa) mahasiswa;
+                if (user.login(nama, nim)) {
                     user.displayInfo();
                     user.displayAppMenu();
                 } else {
